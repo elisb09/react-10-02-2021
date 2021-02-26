@@ -9,8 +9,8 @@ const Cart = (props) => {
                     return (
                         <li key={item.id}>
                             {item.title} - {item.count} - {item.price} kgz
-                            <button>+</button>
-                            <button>-</button>
+                            <button onClick={props.addToCount} href="#" className="btn btn-primary">+</button>
+                            <button onClick={props.addToCount} href="#" className="btn btn-primary">-</button>
                         </li>
                     )
                 })}

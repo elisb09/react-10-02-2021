@@ -12,7 +12,8 @@ class ProductList extends Component {
             { id: 50, title: "Masan2", description: "It is a good product4", price: 320, count: 1 },
             { id: 90, title: "Lasan2", description: "It is a good product3", price: 620, count: 1 },
         ],
-        cart: []
+        cart: [],
+        counts: []
     }
 
     consoleTitle = (title) => () => {
@@ -31,6 +32,19 @@ class ProductList extends Component {
             })
             console.log(this.state.cart);
         }
+    }
+
+    addToCount = (id) => () => {
+
+        const exist = this.state.count.find((item) => item.id === id)
+        // if (exist === undefined) {
+            this.setState((state) => {
+                const item = state.productList.find((item) => item.id === id)
+                return {
+                    counts: [...state.counts, { ...item }]
+                }
+            })
+        // }
     }
 
     render() {
